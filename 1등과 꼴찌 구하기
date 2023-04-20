@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, score, max=0, min=100;
+    printf("학생 수를 입력하세요:");
+    scanf("%d", &n);
+    printf("점수를 입력하세요(0~100):\n");
+    for(int i=1; i<=n; i++)
+    {
+        scanf("%d", &score);
+        if(score>max) max=score;
+        if(score<min) min=score;
+    }
+    printf("1등은 %d점, 꼴찌는 %d점\n", max, min);
+    return 0;
+}

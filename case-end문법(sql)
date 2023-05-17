@@ -1,0 +1,30 @@
+select * from book;
+select * from customer;
+select * from orders;
+--Q1. orders 테이블에서 2020년 7월에 속하는 주문일에 대해서 주문기간이 1일부터 5일까지이면 '장기 주문'
+--나머지는 '단기 주문'으로 표시하는 칼럼(칼럼명:order type)을 추가하여 주문 내용을 전체 출력하는 sql문을 작성하시오.
+--단 경과는 주문 가격을 기준으로 내림차순을 정렬해주세요
+
+--1-1 orders 테이블을 출력해보자
+select * from orders;
+-- 1-2. orders테이블에서 2020년 7월에 속하는 주문일에 해당하는 주문을 출력해보자
+select * from orders
+where to_char(orderdate, 'yymm') = '2007';
+--1-3. orders 테이블에서 2020년 7월에 속하는 주문일에 해당하는 주문을 주문 가격 기준으로 내림차순 정렬해보자
+select * from orders
+where to_char(orderdate, 'yymm') = '2007'
+order by saleprice desc;
+--1-4. 위테이블에서 주문기간이 1일부터 5일까지이면 '장기 주문'
+--나머지는 '단기 주문'으로 표시하는 칼럼(칼럼명:order type)을 추가하시오.
+select orderid, custid, bookid, saleprice, orderdate,
+case
+when to_char(orderdate, 'yymmdd') between '200701' and '200705'
+then '장기 주문'
+else '단기 주문' 
+end order_type
+--case end문
+from orders
+where to_char(orderdate, 'yymm') = '2007'
+order by saleprice desc;
+
+commit;

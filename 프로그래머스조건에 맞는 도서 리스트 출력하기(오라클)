@@ -1,0 +1,5 @@
+-- 코드를 입력하세요
+SELECT book_id, to_char(published_date, 'yyyy-mm-dd') PUBLISHED_DATE
+FROM Book
+WHERE to_char(published_date, 'yyyy') = '2021' AND category LIKE '%인문%'
+ORDER BY published_date;

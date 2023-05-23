@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+  int r = 0, l = 0;
+  char c;
+
+  while ((c = getchar()) != EOF) {
+    if (c == '(') {
+      l++;
+    } else if (c == ')') {
+      r++;
+    }
+  }
+
+  printf("%d %d\n", l, r);
+
+  return 0;
+}

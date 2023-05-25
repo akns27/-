@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>//틀린 코드
 int f(int a, int b, int c, int d)
 {
     return a+b+c+d;
@@ -22,4 +22,40 @@ main()
         
     }
     return 0;
+
+
+#include<stdio.h>//정답 코드
+
+int f(int a, int b, int c, int d) {
+    return a + b + c + d;
 }
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+
+    if (a > 1 || a < 0 || b > 1 || b < 0 || c > 1 || c < 0 || d > 1 || d < 0) {
+        printf("입력 오류");
+        return 0;
+    }
+
+    switch (f(a, b, c, d)) {
+        case 1:
+            printf("도\n");
+            break;
+        case 2:
+            printf("개\n");
+            break;
+        case 3:
+            printf("걸\n");
+            break;
+        case 4:
+            printf("윷\n");
+            break;
+        default:
+            printf("모\n");
+    }
+
+    return 0;
+}
+

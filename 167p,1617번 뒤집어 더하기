@@ -1,0 +1,21 @@
+#include<stdio.h>
+int f(int a)
+{
+    int s = 0;
+    while(a)
+    {
+        s = s*10;
+        s = s+a%10;
+        a = a/10;//이 수식 이해하기
+    }
+    return s;
+}
+int main()
+{
+    int a, b;
+    scanf("%d", &a);
+    b=a+f(a);
+    if (b==f(b))
+        printf("yes");
+    else printf("no");
+}

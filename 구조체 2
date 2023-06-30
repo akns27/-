@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    char *p;
+    char arr[100];
+    scanf("%s",arr);
+
+    int s, e;
+    scanf("%d %d", &s, &e);
+    p=arr+s-1;//0부터 배열이 시작해서 -1을 붙여줌
+
+    for(s=s;s<e+1;s++)//0부터 배열이 시작하니까 e+1
+    {
+        printf("%c", *p++);//한칸 전진을 해야 값이 h e l 처럼 나옴 안하면 hhh 처럼 나옴(hello입력시)
+    }
+}
+//char는 단어고 str은 단어의 집합체 ex) char a p p l e, string은 apple 입력은 str과 char 둘다 해도 되지만
+//char는 %c로 받아서 출력가능 str은 배열로 입력, 출력해야함

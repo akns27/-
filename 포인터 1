@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+    int arr[5]={10,20,30,40,50};
+    int *p;
+    p=arr;
+    printf("%d", *p);//10
+    printf("%d", *p+1);//10+1
+    printf("%d", *(p+1));//20, 배열 한칸 지나가서 1번 출력
+    printf("%d", *(p+3)+10);//40+10 배열 3칸 지나가서 그 값에 10더하기
+    return 0;
+}
